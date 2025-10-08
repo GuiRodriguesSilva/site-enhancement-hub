@@ -75,12 +75,13 @@ const Index = () => {
           </div>
           
           <ul className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <li><a href="#inicio" className="text-foreground/80 hover:text-primary transition-colors">Início</a></li>
-            <li><a href="#treinamento" className="text-foreground/80 hover:text-primary transition-colors">Treinamento</a></li>
-            <li><a href="#produtos" className="text-foreground/80 hover:text-primary transition-colors">Produtos</a></li>
-            <li><a href="#suporte" className="text-foreground/80 hover:text-primary transition-colors">Suporte</a></li>
-            <li><a href="#lancamentos" className="text-foreground/80 hover:text-primary transition-colors">Lançamentos</a></li>
-            <li><a href="#contato" className="text-foreground/80 hover:text-primary transition-colors">Contato</a></li>
+            <li><a href="/" className="text-foreground/80 hover:text-primary transition-colors">Início</a></li>
+            <li><a href="/treinamento" className="text-foreground/80 hover:text-primary transition-colors">Treinamento</a></li>
+            <li><a href="/produtos" className="text-foreground/80 hover:text-primary transition-colors">Produtos</a></li>
+            <li><a href="/suporte" className="text-foreground/80 hover:text-primary transition-colors">Suporte</a></li>
+            <li><a href="/lancamentos" className="text-foreground/80 hover:text-primary transition-colors">Lançamentos</a></li>
+            <li><a href="/contato" className="text-foreground/80 hover:text-primary transition-colors">Contato</a></li>
+            <li><a href="/download" className="text-foreground/80 hover:text-primary transition-colors">Download</a></li>
           </ul>
 
           <Button
