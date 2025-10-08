@@ -13,6 +13,7 @@ import {
   ChevronRight,
   Sparkles
 } from "lucide-react";
+import zyxelLogo from "@/assets/zyxel-logo.png";
 
 const Index = () => {
   const [isDark, setIsDark] = useState(false);
@@ -65,8 +66,8 @@ const Index = () => {
       <header className="sticky top-0 z-50 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <nav className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-2">
-            <div className="flex items-center gap-2 text-2xl font-bold">
-              <Zap className="h-7 w-7 text-primary animate-glow-pulse" />
+            <div className="flex items-center gap-3 text-2xl font-bold">
+              <img src={zyxelLogo} alt="Zyxel Logo" className="h-10 w-auto" />
               <span className="bg-tech-gradient bg-clip-text text-transparent">
                 Zyxel Brasil Network
               </span>
@@ -208,7 +209,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <Zap className="h-5 w-5 text-primary" />
+              <img src={zyxelLogo} alt="Zyxel Logo" className="h-6 w-auto" />
               <span className="text-sm font-semibold">Zyxel Brasil Network</span>
             </div>
             <p className="text-sm text-muted-foreground">
