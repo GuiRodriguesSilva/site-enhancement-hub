@@ -1,4 +1,10 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import zyxelLogo from "@/assets/zyxel-logo.png";
@@ -6,25 +12,46 @@ import zyxelLogo from "@/assets/zyxel-logo.png";
 const Contato = () => {
   const contacts = [
     {
-      title: "Vendas",
-      name: "João Silva",
-      phone: "(11) 3000-0001",
-      email: "vendas@zyxelbrasil.com.br",
+      title: "Gerente Comercial Nacional de Vendas",
+      name: "Diogo Nakazawa",
+      phone: ".",
+      email: ".",
       department: "Departamento Comercial",
     },
     {
-      title: "Suporte Técnico",
-      name: "Maria Santos",
-      phone: "(11) 3000-0002",
-      email: "suporte@zyxelbrasil.com.br",
+      title: "Gerente de Contas Estratégicas",
+      name: "Fernada Hikawa",
+      phone: ".",
+      email: ".",
+      department: "Departamento Comercial",
+    },
+    {
+      title: "Analista de Pré-Vendas",
+      name: "Felippe Sic",
+      phone: ".",
+      email: ".",
+      department: "Departamento Comercial",
+    },
+    {
+      title: "Cordenador Comercial",
+      name: "José Humberto",
+      phone: ".",
+      email: ".",
+      department: "Departamento Comercial",
+    },
+    {
+      title: "Analista de Suporte Técnico",
+      name: "Alexandre Inacio",
+      phone: ".",
+      email: ".",
       department: "Departamento Técnico",
     },
     {
-      title: "Treinamentos",
-      name: "Carlos Oliveira",
-      phone: "(11) 3000-0003",
-      email: "treinamento@zyxelbrasil.com.br",
-      department: "Departamento de Capacitação",
+      title: "Suporte Técnico",
+      name: "Guilherme Rodrigues da Silva",
+      phone: ".",
+      email: ".",
+      department: "Departamento Técnico",
     },
   ];
 
@@ -51,7 +78,10 @@ const Contato = () => {
               <Phone className="h-8 w-8 text-primary" />
             </div>
             <h1 className="mb-6 text-4xl font-bold md:text-5xl">
-              Entre em <span className="bg-tech-gradient bg-clip-text text-transparent">Contato</span>
+              Entre em{" "}
+              <span className="bg-tech-gradient bg-clip-text text-transparent">
+                Contato
+              </span>
             </h1>
             <p className="text-lg text-muted-foreground">
               Nossa equipe está pronta para atender você
@@ -65,7 +95,10 @@ const Contato = () => {
         <div className="container mx-auto px-4">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
             {contacts.map((contact, index) => (
-              <Card key={index} className="hover:shadow-lg hover:shadow-primary/20 transition-all duration-300">
+              <Card
+                key={index}
+                className="hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
+              >
                 <CardHeader>
                   <CardTitle className="text-xl">{contact.title}</CardTitle>
                   <CardDescription>{contact.department}</CardDescription>
@@ -115,9 +148,11 @@ const Contato = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Av. Paulista, 1000 - Conjunto 100<br />
-                  Bela Vista, São Paulo - SP<br />
-                  CEP: 01310-100
+                  Rua. Urussuí, 300 - Conjunto 12/13
+                  <br />
+                  Itaim Bibi, São Paulo - SP
+                  <br />
+                  CEP: 04542-050
                 </p>
               </CardContent>
             </Card>
@@ -131,8 +166,10 @@ const Contato = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Segunda a Sexta: 8h às 18h<br />
-                  Sábado: 8h às 12h<br />
+                  Segunda a Sexta: 8h às 18h
+                  <br />
+                  Sábado: Fechado
+                  <br />
                   Domingo e Feriados: Fechado
                 </p>
               </CardContent>

@@ -1,5 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -42,10 +48,14 @@ const Suporte = () => {
               <Headphones className="h-8 w-8 text-primary" />
             </div>
             <h1 className="mb-6 text-4xl font-bold md:text-5xl">
-              Suporte <span className="bg-tech-gradient bg-clip-text text-transparent">Técnico</span>
+              Suporte{" "}
+              <span className="bg-tech-gradient bg-clip-text text-transparent">
+                Técnico
+              </span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Nossa equipe está pronta para ajudar você com qualquer problema técnico
+              Nossa equipe está pronta para ajudar você com qualquer problema
+              técnico
             </p>
           </div>
         </div>
@@ -59,7 +69,8 @@ const Suporte = () => {
               <CardHeader>
                 <CardTitle>Abertura de Chamado</CardTitle>
                 <CardDescription>
-                  Preencha o formulário abaixo e nossa equipe técnica entrará em contato
+                  Preencha o formulário abaixo e nossa equipe técnica entrará em
+                  contato
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -71,14 +82,24 @@ const Suporte = () => {
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="email">E-mail *</Label>
-                      <Input id="email" type="email" placeholder="seu@email.com" required />
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="seu@email.com"
+                        required
+                      />
                     </div>
                   </div>
 
                   <div className="grid gap-6 md:grid-cols-2">
                     <div className="space-y-2">
                       <Label htmlFor="phone">Telefone *</Label>
-                      <Input id="phone" type="tel" placeholder="(00) 00000-0000" required />
+                      <Input
+                        id="phone"
+                        type="tel"
+                        placeholder="(00) 00000-0000"
+                        required
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="company">Empresa</Label>
@@ -93,7 +114,11 @@ const Suporte = () => {
 
                   <div className="space-y-2">
                     <Label htmlFor="subject">Assunto *</Label>
-                    <Input id="subject" placeholder="Resumo do problema" required />
+                    <Input
+                      id="subject"
+                      placeholder="Resumo do problema"
+                      required
+                    />
                   </div>
 
                   <div className="space-y-2">
@@ -107,7 +132,9 @@ const Suporte = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="troubleshooting">Troubleshooting Realizado</Label>
+                    <Label htmlFor="troubleshooting">
+                      Troubleshooting Realizado
+                    </Label>
                     <Textarea
                       id="troubleshooting"
                       placeholder="Descreva as tentativas de solução que você já realizou..."
@@ -127,12 +154,15 @@ const Suporte = () => {
             <div className="mt-8 grid gap-4 md:grid-cols-2">
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg">Horário de Atendimento</CardTitle>
+                  <CardTitle className="text-lg">
+                    Horário de Atendimento
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Segunda a Sexta: 8h às 18h<br />
-                    Sábado: 8h às 12h<br />
+                    Segunda a Sexta: 8h às 18h
+                    <br />
+                    Sábado: Fechado <br />
                     Domingo: Fechado
                   </p>
                 </CardContent>
@@ -144,8 +174,10 @@ const Suporte = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">
-                    Crítico: 2 horas<br />
-                    Alto: 4 horas<br />
+                    Crítico: 2 horas
+                    <br />
+                    Alto: 4 horas
+                    <br />
                     Normal: 24 horas
                   </p>
                 </CardContent>
