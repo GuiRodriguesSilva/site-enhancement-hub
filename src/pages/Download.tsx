@@ -1,11 +1,33 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Download as DownloadIcon, Smartphone, Cloud, Shield, Zap, CheckCircle2 } from "lucide-react";
+import { Download as DownloadIcon, Smartphone, Cloud, Shield, Zap, CheckCircle2, Moon, Sun } from "lucide-react";
 import { Link } from "react-router-dom";
 import zyxelLogo from "@/assets/zyxel-logo.png";
 
 const Download = () => {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+      setIsDark(true);
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+    if (!isDark) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  };
+
   const features = [
     {
       icon: Cloud,
@@ -51,6 +73,13 @@ const Download = () => {
               Zyxel Brasil Network
             </span>
           </Link>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+          >
+            {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          </Button>
         </nav>
       </header>
 

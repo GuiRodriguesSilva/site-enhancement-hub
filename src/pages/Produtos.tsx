@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Network, Shield, Wifi, Router } from "lucide-react";
+import { Network, Shield, Wifi, Router, Moon, Sun } from "lucide-react";
 import { Link } from "react-router-dom";
 import zyxelLogo from "@/assets/zyxel-logo.png";
 
@@ -17,6 +17,26 @@ import zyxelLogo from "@/assets/zyxel-logo.png";
 // --------------------------------------------------
 const Produtos = () => {
   const [filtro, setFiltro] = useState("Todos");
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+      setIsDark(true);
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+    if (!isDark) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  };
 
   const products = [
     {
@@ -166,6 +186,13 @@ const Produtos = () => {
               Zyxel Brasil Network
             </span>
           </Link>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleTheme}
+          >
+            {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          </Button>
         </nav>
       </header>
 
