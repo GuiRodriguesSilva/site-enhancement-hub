@@ -3,10 +3,15 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import Treinamento from "./pages/Treinamento";
-import Produtos from "./pages/Produtos";
-import Suporte from "./pages/Suporte";
+import Lobby from "./pages/Lobby";
+import NetworkIndex from "./pages/network/Index";
+import NetworkProdutos from "./pages/network/Produtos";
+import NetworkTreinamento from "./pages/network/Treinamento";
+import NetworkSuport from "./pages/network/Suporte";
+import CommunicationIndex from "./pages/communication/Index";
+import CommunicationProdutos from "./pages/communication/Produtos";
+import CommunicationTreinamento from "./pages/communication/Treinamento";
+import CommunicationSuport from "./pages/communication/Suporte";
 import Lancamentos from "./pages/Lancamentos";
 import Contato from "./pages/Contato";
 import Download from "./pages/Download";
@@ -21,14 +26,21 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/treinamento" element={<Treinamento />} />
-          <Route path="/produtos" element={<Produtos />} />
-          <Route path="/suporte" element={<Suporte />} />
-          <Route path="/lancamentos" element={<Lancamentos />} />
-          <Route path="/contato" element={<Contato />} />
-          <Route path="/download" element={<Download />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/" element={<Lobby />} />
+          <Route path="/network" element={<NetworkIndex />} />
+          <Route path="/network/produtos" element={<NetworkProdutos />} />
+          <Route path="/network/treinamento" element={<NetworkTreinamento />} />
+          <Route path="/network/suporte" element={<NetworkSuport />} />
+          <Route path="/network/lancamentos" element={<Lancamentos />} />
+          <Route path="/network/contato" element={<Contato />} />
+          <Route path="/network/download" element={<Download />} />
+          <Route path="/communication" element={<CommunicationIndex />} />
+          <Route path="/communication/produtos" element={<CommunicationProdutos />} />
+          <Route path="/communication/treinamento" element={<CommunicationTreinamento />} />
+          <Route path="/communication/suporte" element={<CommunicationSuport />} />
+          <Route path="/communication/lancamentos" element={<Lancamentos />} />
+          <Route path="/communication/contato" element={<Contato />} />
+          <Route path="/communication/download" element={<Download />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
