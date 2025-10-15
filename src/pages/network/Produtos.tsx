@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -13,6 +13,14 @@ import { HeaderNetwork } from "@/components/HeaderNetwork";
 
 const NetworkProdutos = () => {
   const [filtro, setFiltro] = useState("Todos");
+
+  useEffect(() => {
+    document.documentElement.classList.add("network-theme");
+    document.documentElement.classList.remove("communication-theme");
+    return () => {
+      document.documentElement.classList.remove("network-theme");
+    };
+  }, []);
 
   const products = [
     {

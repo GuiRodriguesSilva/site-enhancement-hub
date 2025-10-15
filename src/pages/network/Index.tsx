@@ -11,8 +11,17 @@ import {
 } from "lucide-react";
 import zyxelLogo from "@/assets/zyxel-logo.png";
 import { HeaderNetwork } from "@/components/HeaderNetwork";
+import { useEffect } from "react";
 
 const NetworkIndex = () => {
+  // Garantir que a classe network-theme seja aplicada
+  useEffect(() => {
+    document.documentElement.classList.add("network-theme");
+    document.documentElement.classList.remove("communication-theme");
+    return () => {
+      document.documentElement.classList.remove("network-theme");
+    };
+  }, []);
   const features = [
     {
       icon: Network,

@@ -11,8 +11,17 @@ import {
 } from "lucide-react";
 import zyxelLogo from "@/assets/zyxel-logo.png";
 import { HeaderCommunication } from "@/components/HeaderCommunication";
+import { useEffect } from "react";
 
 const CommunicationIndex = () => {
+  // Garantir que a classe communication-theme seja aplicada
+  useEffect(() => {
+    document.documentElement.classList.add("communication-theme");
+    document.documentElement.classList.remove("network-theme");
+    return () => {
+      document.documentElement.classList.remove("communication-theme");
+    };
+  }, []);
   const features = [
     {
       icon: Radio,
