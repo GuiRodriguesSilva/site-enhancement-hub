@@ -34,17 +34,17 @@ const Lobby = () => {
               onMouseLeave={() => setHoveredSide(null)}
               className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-600 via-green-600 to-teal-700 p-1 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/50"
             >
-              <div className="relative bg-gradient-to-br from-emerald-600/90 via-green-600/90 to-teal-700/90 rounded-3xl p-12 md:p-16 h-full min-h-[400px] flex flex-col items-center justify-center text-center backdrop-blur-sm">
+              <div className="relative bg-gradient-to-br from-emerald-600/90 via-green-600/90 to-teal-700/90 rounded-3xl p-8 md:p-12 h-full min-h-[300px] flex flex-col items-center justify-center text-center backdrop-blur-sm">
                 {/* Ícone animado */}
-                <div className={`mb-8 p-6 rounded-full bg-white/20 backdrop-blur-md transition-all duration-500 ${hoveredSide === 'network' ? 'scale-110 rotate-12' : ''}`}>
-                  <Network className="h-16 w-16 md:h-20 md:w-20 text-white drop-shadow-lg" />
+                <div className={`mb-6 p-4 rounded-full bg-white/20 backdrop-blur-md transition-all duration-500 ${hoveredSide === 'network' ? 'scale-110 rotate-12' : ''}`}>
+                  <Network className="h-12 w-12 md:h-14 md:w-14 text-white drop-shadow-lg" />
                 </div>
                 
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-3 drop-shadow-lg">
                   Network
                 </h2>
                 
-                <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-md drop-shadow-md">
+                <p className="text-lg md:text-xl text-white/90 mb-6 max-w-md drop-shadow-md">
                   Infraestrutura de Redes e Segurança Empresarial
                 </p>
                 
@@ -67,17 +67,17 @@ const Lobby = () => {
               onMouseLeave={() => setHoveredSide(null)}
               className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600 via-cyan-600 to-sky-700 p-1 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50"
             >
-              <div className="relative bg-gradient-to-br from-blue-600/90 via-cyan-600/90 to-sky-700/90 rounded-3xl p-12 md:p-16 h-full min-h-[400px] flex flex-col items-center justify-center text-center backdrop-blur-sm">
+              <div className="relative bg-gradient-to-br from-blue-600/90 via-cyan-600/90 to-sky-700/90 rounded-3xl p-8 md:p-12 h-full min-h-[300px] flex flex-col items-center justify-center text-center backdrop-blur-sm">
                 {/* Ícone animado */}
-                <div className={`mb-8 p-6 rounded-full bg-white/20 backdrop-blur-md transition-all duration-500 ${hoveredSide === 'communication' ? 'scale-110 rotate-12' : ''}`}>
-                  <Radio className="h-16 w-16 md:h-20 md:w-20 text-white drop-shadow-lg" />
+                <div className={`mb-6 p-4 rounded-full bg-white/20 backdrop-blur-md transition-all duration-500 ${hoveredSide === 'communication' ? 'scale-110 rotate-12' : ''}`}>
+                  <Radio className="h-12 w-12 md:h-14 md:w-14 text-white drop-shadow-lg" />
                 </div>
                 
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-3 drop-shadow-lg">
                   Communication
                 </h2>
                 
-                <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-md drop-shadow-md">
+                <p className="text-lg md:text-xl text-white/90 mb-6 max-w-md drop-shadow-md">
                   Comunicação e Conectividade Avançada
                 </p>
                 
