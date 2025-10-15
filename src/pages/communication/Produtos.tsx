@@ -200,7 +200,7 @@ const CommunicationProdutos = () => {
                       </span>
                       <Button asChild variant="outline" size="sm">
                         <a
-                          href={`https://api.whatsapp.com/send?phone=5511951857253&text=${encodeURIComponent(
+                          href={`https://web.whatsapp.com/send?phone=5511951857253&text=${encodeURIComponent(
                             `Olá! Gostaria de saber mais sobre o ${product.name} da Zyxel Communication.`
                           )}`}
                           target="_blank"
