@@ -15,16 +15,16 @@ const Lobby = () => {
       </div>
 
       {/* Header com logo centralizado */}
-      <div className="absolute top-0 left-0 right-0 z-50 flex flex-col items-center pt-12">
-        <img src={zyxelLogo} alt="Zyxel Logo" className="h-20 md:h-24 mb-6 drop-shadow-2xl" />
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-2xl mb-3">
+      <div className="absolute top-0 left-0 right-0 z-50 flex flex-col items-center pt-8">
+        <img src={zyxelLogo} alt="Zyxel Logo" className="h-16 md:h-20 mb-4 drop-shadow-2xl" />
+        <h1 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl mb-2">
           Zyxel Brasil
         </h1>
-        <p className="text-white/80 text-lg md:text-xl drop-shadow-lg">Escolha sua Business Unit</p>
+        <p className="text-white/70 text-sm md:text-base drop-shadow-lg">Escolha sua Business Unit</p>
       </div>
 
       {/* Container principal com as duas opções */}
-      <div className="relative h-full w-full flex items-center justify-center pt-32">
+      <div className="relative h-full w-full flex items-center justify-center pt-16">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             {/* Network Card */}
