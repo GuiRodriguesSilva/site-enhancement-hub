@@ -28,11 +28,14 @@ export const HeaderNetwork = () => {
     setIsDark(newDarkMode);
     localStorage.setItem("darkMode", newDarkMode.toString());
     
-    document.documentElement.classList.add("network-theme");
+    const html = document.documentElement;
+    html.classList.add("network-theme");
+    html.classList.remove("communication-theme");
+    
     if (newDarkMode) {
-      document.documentElement.classList.add("dark");
+      html.classList.add("dark");
     } else {
-      document.documentElement.classList.remove("dark");
+      html.classList.remove("dark");
     }
   };
 

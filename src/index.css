@@ -7,7 +7,7 @@ All colors MUST be HSL.
 */
 
 @layer base {
-  /* Default Light Theme (Network Green) */
+  /* Default Theme */
   :root {
     --background: 0 0% 100%;
     --foreground: 140 85% 8%;
@@ -42,42 +42,8 @@ All colors MUST be HSL.
     --sidebar-ring: 125 75% 45%;
   }
 
-  /* Network Theme Light */
-  .network-theme:not(.dark) {
-    --background: 0 0% 100%;
-    --foreground: 140 85% 8%;
-    --card: 0 0% 100%;
-    --card-foreground: 140 85% 8%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 140 85% 8%;
-    --primary: 125 75% 45%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 125 85% 55%;
-    --secondary: 140 20% 96%;
-    --secondary-foreground: 140 85% 8%;
-    --muted: 140 15% 95%;
-    --muted-foreground: 140 10% 45%;
-    --accent: 135 60% 50%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 140 20% 88%;
-    --input: 140 20% 88%;
-    --ring: 125 75% 45%;
-    --tech-gradient-start: 125 75% 45%;
-    --tech-gradient-end: 160 70% 50%;
-    --sidebar-background: 140 15% 98%;
-    --sidebar-foreground: 140 85% 8%;
-    --sidebar-primary: 125 75% 45%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 140 20% 94%;
-    --sidebar-accent-foreground: 140 85% 8%;
-    --sidebar-border: 140 20% 88%;
-    --sidebar-ring: 125 75% 45%;
-  }
-
-  /* Network Theme Dark */
-  .network-theme.dark {
+  /* Network Theme Dark Mode */
+  html.dark.network-theme {
     --background: 140 60% 4%;
     --foreground: 140 15% 95%;
     --card: 140 50% 6%;
@@ -110,8 +76,8 @@ All colors MUST be HSL.
     --sidebar-ring: 125 75% 50%;
   }
 
-  /* Communication Theme Light */
-  .communication-theme:not(.dark) {
+  /* Communication Theme Light Mode */
+  html.communication-theme:not(.dark) {
     --background: 0 0% 100%;
     --foreground: 210 85% 8%;
     --card: 0 0% 100%;
@@ -144,8 +110,8 @@ All colors MUST be HSL.
     --sidebar-ring: 205 75% 45%;
   }
 
-  /* Communication Theme Dark */
-  .communication-theme.dark {
+  /* Communication Theme Dark Mode */
+  html.dark.communication-theme {
     --background: 210 60% 4%;
     --foreground: 210 15% 95%;
     --card: 210 50% 6%;
