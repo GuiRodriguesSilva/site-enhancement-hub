@@ -15,7 +15,7 @@ const Lobby = () => {
       </div>
 
       {/* Header com logo centralizado */}
-      <div className="absolute top-0 left-0 right-0 z-50 flex flex-col items-center pt-2">
+      <div className="absolute top-0 left-0 right-0 z-50 flex flex-col items-center pt-1">
         <img src={zyxelLogo} alt="Zyxel Logo" className="h-12 md:h-14 mb-2 drop-shadow-2xl" />
         <h1 className="text-xl md:text-2xl font-bold text-white drop-shadow-2xl mb-1">
           Zyxel Brasil
