@@ -24,6 +24,8 @@ export const HeaderCommunication = () => {
     const newDarkMode = !isDark;
     setIsDark(newDarkMode);
     localStorage.setItem("darkMode", newDarkMode.toString());
+    
+    document.documentElement.classList.add("communication-theme");
     if (newDarkMode) {
       document.documentElement.classList.add("dark");
     } else {

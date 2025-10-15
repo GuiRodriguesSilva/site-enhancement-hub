@@ -7,7 +7,7 @@ All colors MUST be HSL.
 */
 
 @layer base {
-  /* Network Theme - Green */
+  /* Network Theme - Green (Light Mode) */
   :root, .network-theme {
     --background: 0 0% 100%;
     --foreground: 140 85% 8%;
@@ -53,7 +53,7 @@ All colors MUST be HSL.
     --sidebar-ring: 125 75% 45%;
   }
 
-  /* Communication Theme - Blue */
+  /* Communication Theme - Blue (Light Mode) */
   .communication-theme {
     --background: 0 0% 100%;
     --foreground: 210 85% 8%;
@@ -100,7 +100,7 @@ All colors MUST be HSL.
   }
 
   /* Dark mode for Network */
-  .dark.network-theme, .dark:not(.communication-theme) {
+  .dark.network-theme, .network-theme.dark {
     --background: 140 60% 4%;
     --foreground: 140 15% 95%;
 
@@ -144,7 +144,7 @@ All colors MUST be HSL.
   }
 
   /* Dark mode for Communication */
-  .dark.communication-theme {
+  .dark.communication-theme, .communication-theme.dark {
     --background: 210 60% 4%;
     --foreground: 210 15% 95%;
 
