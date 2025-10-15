@@ -4,15 +4,21 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
 export const HeaderNetwork = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem("darkMode") === "true";
+    }
+    return false;
+  });
 
   useEffect(() => {
-    const isDarkMode = localStorage.getItem("darkMode") === "true";
-    setIsDark(isDarkMode);
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
+    if (isDark) {
+      document.documentElement.classList.add("dark", "network-theme");
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("network-theme");
     }
-  }, []);
+  }, [isDark]);
 
   const toggleTheme = () => {
     const newDarkMode = !isDark;

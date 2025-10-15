@@ -1,83 +1,106 @@
 import { Link } from "react-router-dom";
-import { Network, Radio, ArrowRight } from "lucide-react";
+import { Network, Radio } from "lucide-react";
 import zyxelLogo from "@/assets/zyxel-logo.png";
+import { useState } from "react";
 
 const Lobby = () => {
+  const [hoveredSide, setHoveredSide] = useState<'network' | 'communication' | null>(null);
+
   return (
-    <div className="relative h-screen w-screen overflow-hidden">
-      {/* Logo no topo */}
-      <div className="absolute top-8 left-1/2 -translate-x-1/2 z-50 text-center">
-        <img src={zyxelLogo} alt="Zyxel Logo" className="h-16 mx-auto mb-4" />
-        <h1 className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg">
-          Zyxel Brasil
-        </h1>
-        <p className="text-white/90 text-lg mt-2 drop-shadow-md">Escolha sua área de interesse</p>
+    <div className="relative h-screen w-screen overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      {/* Animated background patterns */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-green-500 rounded-full filter blur-[100px] animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full filter blur-[100px] animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
-      {/* Divisão diagonal */}
-      <div className="relative h-full w-full">
-        {/* Network Side (Green) - Left */}
-        <Link 
-          to="/network"
-          className="absolute inset-0 group overflow-hidden"
-          style={{
-            clipPath: "polygon(0 0, 50% 0, 0 100%)"
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 via-green-600 to-teal-700 transition-all duration-500 group-hover:scale-110">
-            <div className="absolute inset-0 bg-black/20"></div>
-          </div>
-          
-          <div className="relative h-full flex flex-col items-center justify-center text-white px-8 transform -translate-x-24 group-hover:-translate-x-20 transition-transform duration-300">
-            <Network className="h-24 w-24 mb-6 drop-shadow-lg animate-fade-in" />
-            <h2 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Network</h2>
-            <p className="text-xl md:text-2xl text-center max-w-md mb-6 drop-shadow-md">
-              Soluções em Infraestrutura de Redes
-            </p>
-            <div className="flex items-center gap-2 text-lg font-semibold">
-              <span>Explorar</span>
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform" />
-            </div>
-          </div>
-        </Link>
+      {/* Header com logo centralizado */}
+      <div className="absolute top-0 left-0 right-0 z-50 flex flex-col items-center pt-12">
+        <img src={zyxelLogo} alt="Zyxel Logo" className="h-20 md:h-24 mb-6 drop-shadow-2xl" />
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-2xl mb-3">
+          Zyxel Brasil
+        </h1>
+        <p className="text-white/80 text-lg md:text-xl drop-shadow-lg">Escolha sua Business Unit</p>
+      </div>
 
-        {/* Communication Side (Blue) - Right */}
-        <Link 
-          to="/communication"
-          className="absolute inset-0 group overflow-hidden"
-          style={{
-            clipPath: "polygon(50% 0, 100% 0, 100% 100%, 0 100%)"
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-bl from-blue-600 via-cyan-600 to-sky-700 transition-all duration-500 group-hover:scale-110">
-            <div className="absolute inset-0 bg-black/20"></div>
-          </div>
-          
-          <div className="relative h-full flex flex-col items-center justify-center text-white px-8 transform translate-x-24 group-hover:translate-x-20 transition-transform duration-300">
-            <Radio className="h-24 w-24 mb-6 drop-shadow-lg animate-fade-in" />
-            <h2 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Communication</h2>
-            <p className="text-xl md:text-2xl text-center max-w-md mb-6 drop-shadow-md">
-              Soluções em Comunicação e Conectividade
-            </p>
-            <div className="flex items-center gap-2 text-lg font-semibold">
-              <span>Explorar</span>
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-2 transition-transform" />
-            </div>
-          </div>
-        </Link>
+      {/* Container principal com as duas opções */}
+      <div className="relative h-full w-full flex items-center justify-center pt-32">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+            {/* Network Card */}
+            <Link 
+              to="/network"
+              onMouseEnter={() => setHoveredSide('network')}
+              onMouseLeave={() => setHoveredSide(null)}
+              className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-600 via-green-600 to-teal-700 p-1 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/50"
+            >
+              <div className="relative bg-gradient-to-br from-emerald-600/90 via-green-600/90 to-teal-700/90 rounded-3xl p-12 md:p-16 h-full min-h-[400px] flex flex-col items-center justify-center text-center backdrop-blur-sm">
+                {/* Ícone animado */}
+                <div className={`mb-8 p-6 rounded-full bg-white/20 backdrop-blur-md transition-all duration-500 ${hoveredSide === 'network' ? 'scale-110 rotate-12' : ''}`}>
+                  <Network className="h-16 w-16 md:h-20 md:w-20 text-white drop-shadow-lg" />
+                </div>
+                
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+                  Network
+                </h2>
+                
+                <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-md drop-shadow-md">
+                  Infraestrutura de Redes e Segurança Empresarial
+                </p>
+                
+                <div className="flex items-center gap-3 text-white/90 text-lg font-semibold group-hover:gap-5 transition-all">
+                  <span>Explorar Soluções</span>
+                  <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
 
-        {/* Linha diagonal decorativa */}
-        <div 
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: "linear-gradient(to bottom right, transparent 49.5%, white 49.5%, white 50.5%, transparent 50.5%)"
-          }}
-        ></div>
+                {/* Efeito de brilho */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+              </div>
+            </Link>
+
+            {/* Communication Card */}
+            <Link 
+              to="/communication"
+              onMouseEnter={() => setHoveredSide('communication')}
+              onMouseLeave={() => setHoveredSide(null)}
+              className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600 via-cyan-600 to-sky-700 p-1 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50"
+            >
+              <div className="relative bg-gradient-to-br from-blue-600/90 via-cyan-600/90 to-sky-700/90 rounded-3xl p-12 md:p-16 h-full min-h-[400px] flex flex-col items-center justify-center text-center backdrop-blur-sm">
+                {/* Ícone animado */}
+                <div className={`mb-8 p-6 rounded-full bg-white/20 backdrop-blur-md transition-all duration-500 ${hoveredSide === 'communication' ? 'scale-110 rotate-12' : ''}`}>
+                  <Radio className="h-16 w-16 md:h-20 md:w-20 text-white drop-shadow-lg" />
+                </div>
+                
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+                  Communication
+                </h2>
+                
+                <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-md drop-shadow-md">
+                  Comunicação e Conectividade Avançada
+                </p>
+                
+                <div className="flex items-center gap-3 text-white/90 text-lg font-semibold group-hover:gap-5 transition-all">
+                  <span>Explorar Soluções</span>
+                  <svg className="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+
+                {/* Efeito de brilho */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+              </div>
+            </Link>
+          </div>
+        </div>
       </div>
 
       {/* Footer */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white text-center z-50">
-        <p className="text-sm drop-shadow-md">© 2025 Zyxel Brasil - Go Together</p>
+      <div className="absolute bottom-8 left-0 right-0 text-center z-50">
+        <p className="text-white/60 text-sm drop-shadow-md">
+          © 2025 Zyxel Brasil - Go Together
+        </p>
       </div>
     </div>
   );
