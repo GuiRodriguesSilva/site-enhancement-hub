@@ -15,12 +15,12 @@ const Lobby = () => {
       </div>
 
       {/* Header com logo centralizado */}
-      <div className="absolute top-0 left-0 right-0 z-50 flex flex-col items-center pt-8">
-        <img src={zyxelLogo} alt="Zyxel Logo" className="h-16 md:h-20 mb-4 drop-shadow-2xl" />
-        <h1 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl mb-2">
+      <div className="absolute top-0 left-0 right-0 z-50 flex flex-col items-center pt-4">
+        <img src={zyxelLogo} alt="Zyxel Logo" className="h-12 md:h-14 mb-2 drop-shadow-2xl" />
+        <h1 className="text-xl md:text-2xl font-bold text-white drop-shadow-2xl mb-1">
           Zyxel Brasil
         </h1>
-        <p className="text-white/70 text-sm md:text-base drop-shadow-lg">Escolha sua Business Unit</p>
+        <p className="text-white/70 text-xs md:text-sm drop-shadow-lg">Escolha sua Business Unit</p>
       </div>
 
       {/* Container principal com as duas opções */}
