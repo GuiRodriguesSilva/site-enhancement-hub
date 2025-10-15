@@ -41,7 +41,7 @@ export const HeaderCommunication = () => {
       <div className="container flex h-16 items-center justify-between">
         <Link to="/communication" className="flex items-center gap-2">
           <img src="/zyxel-logo.png" alt="Zyxel Logo" className="h-8" />
-          <span className="font-bold text-lg">Zyxel</span>
+          <span className="font-bold text-lg">Zyxel Co.</span>
         </Link>
         
         <nav className="hidden md:flex items-center gap-6">
