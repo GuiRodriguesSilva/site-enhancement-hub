@@ -198,18 +198,15 @@ const CommunicationProdutos = () => {
                       <span className="text-lg font-semibold text-primary">
                         {product.price}
                       </span>
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        onClick={() => {
-                          const mensagem = `Olá! Gostaria de saber mais sobre o ${product.name} da Zyxel Communication.`;
-                          const numero = "5511951857253";
-                          const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
-                          window.open(url, '_blank');
-                        }}
-                        className="text-green-600 hover:text-green-700 hover:border-green-600"
-                      >
-                        Saiba Mais
+                      <Button asChild variant="outline" size="sm">
+                        <a
+                          href={`https://wa.me/5511951857253`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-green-600 hover:text-green-700 hover:border-green-600"
+                        >
+                          Saiba Mais
+                        </a>
                       </Button>
                     </div>
                   </CardContent>
