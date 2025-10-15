@@ -12,11 +12,14 @@ export const HeaderNetwork = () => {
   });
 
   useEffect(() => {
+    // Sempre aplicar a classe network-theme
+    document.documentElement.classList.add("network-theme");
+    document.documentElement.classList.remove("communication-theme");
+    
     if (isDark) {
-      document.documentElement.classList.add("dark", "network-theme");
+      document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
-      document.documentElement.classList.add("network-theme");
     }
   }, [isDark]);
 
