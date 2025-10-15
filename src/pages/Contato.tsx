@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -7,32 +5,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Phone, Mail, MapPin, Clock, Moon, Sun } from "lucide-react";
-import { Link } from "react-router-dom";
-import zyxelLogo from "@/assets/zyxel-logo.png";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Header } from "@/components/Header";
 
 const Contato = () => {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const theme = localStorage.getItem("theme");
-    if (theme === "dark") {
-      setIsDark(true);
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    if (!isDark) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  };
-
   const contacts = [
     {
       title: "Gerente Comercial Nacional de Vendas",
@@ -80,24 +56,7 @@ const Contato = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <nav className="container mx-auto flex h-16 items-center justify-between px-4">
-          <Link to="/" className="flex items-center gap-3 text-2xl font-bold">
-            <img src={zyxelLogo} alt="Zyxel Logo" className="h-10 w-auto" />
-            <span className="bg-tech-gradient bg-clip-text text-transparent">
-              Zyxel Brasil Network
-            </span>
-          </Link>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-          >
-            {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-          </Button>
-        </nav>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">

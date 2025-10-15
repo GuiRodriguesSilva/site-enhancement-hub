@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,33 +9,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Headphones, Send, Moon, Sun } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Headphones, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import zyxelLogo from "@/assets/zyxel-logo.png";
+import { Header } from "@/components/Header";
 
 const Suporte = () => {
   const { toast } = useToast();
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const theme = localStorage.getItem("theme");
-    if (theme === "dark") {
-      setIsDark(true);
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    if (!isDark) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,24 +26,7 @@ const Suporte = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <nav className="container mx-auto flex h-16 items-center justify-between px-4">
-          <Link to="/" className="flex items-center gap-3 text-2xl font-bold">
-            <img src={zyxelLogo} alt="Zyxel Logo" className="h-10 w-auto" />
-            <span className="bg-tech-gradient bg-clip-text text-transparent">
-              Zyxel Brasil Network
-            </span>
-          </Link>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-          >
-            {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-          </Button>
-        </nav>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20">

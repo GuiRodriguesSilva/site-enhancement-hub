@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
@@ -7,36 +6,14 @@ import {
   Headphones, 
   GraduationCap, 
   Zap, 
-  Globe, 
-  Moon, 
-  Sun,
+  Globe,
   ChevronRight,
   Sparkles
 } from "lucide-react";
 import zyxelLogo from "@/assets/zyxel-logo.png";
+import { Header } from "@/components/Header";
 
 const Index = () => {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    const theme = localStorage.getItem("theme");
-    if (theme === "dark") {
-      setIsDark(true);
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    if (!isDark) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  };
-
   const features = [
     {
       icon: Network,
@@ -62,38 +39,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <nav className="container mx-auto flex h-16 items-center justify-between px-4">
-          <div className="flex items-center gap-2">
-            <div className="flex items-center gap-3 text-2xl font-bold">
-              <img src={zyxelLogo} alt="Zyxel Logo" className="h-10 w-auto" />
-              <span className="bg-tech-gradient bg-clip-text text-transparent">
-                Zyxel Brasil Network
-              </span>
-            </div>
-          </div>
-          
-          <ul className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <li><a href="/" className="text-foreground/80 hover:text-primary transition-colors">Início</a></li>
-            <li><a href="/treinamento" className="text-foreground/80 hover:text-primary transition-colors">Treinamento</a></li>
-            <li><a href="/produtos" className="text-foreground/80 hover:text-primary transition-colors">Produtos</a></li>
-            <li><a href="/suporte" className="text-foreground/80 hover:text-primary transition-colors">Suporte</a></li>
-            <li><a href="/lancamentos" className="text-foreground/80 hover:text-primary transition-colors">Lançamentos</a></li>
-            <li><a href="/contato" className="text-foreground/80 hover:text-primary transition-colors">Contato</a></li>
-            <li><a href="/download" className="text-foreground/80 hover:text-primary transition-colors">Download</a></li>
-          </ul>
-
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleTheme}
-            className="ml-auto md:ml-0"
-          >
-            {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-          </Button>
-        </nav>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section id="inicio" className="relative overflow-hidden">
