@@ -6,8 +6,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselApi,
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 import carousel1 from "@/assets/carousel/zyxel-1.jpg";
 import carousel2 from "@/assets/carousel/zyxel-2.jpg";
 import carousel3 from "@/assets/carousel/zyxel-3.jpg";
@@ -15,23 +15,30 @@ import carousel4 from "@/assets/carousel/zyxel-4.jpg";
 
 const Lobby = () => {
   const [hoveredSide, setHoveredSide] = useState<'network' | 'communication' | null>(null);
+  const [api, setApi] = useState<CarouselApi>();
   
   const carouselImages = [carousel1, carousel2, carousel3, carousel4];
+
+  useEffect(() => {
+    if (!api) return;
+
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [api]);
 
   return (
     <div className="relative h-screen w-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Carrossel de imagens de fundo */}
       <div className="absolute inset-0 opacity-20">
         <Carousel
+          setApi={setApi}
           opts={{
             align: "start",
             loop: true,
           }}
-          plugins={[
-            Autoplay({
-              delay: 4000,
-            }),
-          ]}
           className="w-full h-full"
         >
           <CarouselContent className="h-screen">
