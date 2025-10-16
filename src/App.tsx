@@ -13,6 +13,9 @@ import CommunicationIndex from "./pages/communication/Index";
 import CommunicationProdutos from "./pages/communication/Produtos";
 import CommunicationTreinamento from "./pages/communication/Treinamento";
 import CommunicationSuport from "./pages/communication/Suporte";
+import CommunicationLancamentos from "./pages/communication/Lancamentos";
+import CommunicationContato from "./pages/communication/Contato";
+import CommunicationDownload from "./pages/communication/Download";
 import Lancamentos from "./pages/Lancamentos";
 import Contato from "./pages/Contato";
 import Download from "./pages/Download";
@@ -41,9 +44,9 @@ const App = () => (
           <Route path="/communication/produtos" element={<CommunicationProdutos />} />
           <Route path="/communication/treinamento" element={<CommunicationTreinamento />} />
           <Route path="/communication/suporte" element={<CommunicationSuport />} />
-          <Route path="/communication/lancamentos" element={<Lancamentos />} />
-          <Route path="/communication/contato" element={<Contato />} />
-          <Route path="/communication/download" element={<Download />} />
+          <Route path="/communication/lancamentos" element={<CommunicationLancamentos />} />
+          <Route path="/communication/contato" element={<CommunicationContato />} />
+          <Route path="/communication/download" element={<CommunicationDownload />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -51,11 +51,17 @@ export const HeaderCommunication = () => {
           <Link to="/communication/produtos" className="text-sm font-medium transition-colors hover:text-primary">
             Produtos
           </Link>
+          <Link to="/communication/treinamento" className="text-sm font-medium transition-colors hover:text-primary">
+            Treinamento
+          </Link>
           <Link to="/communication/suporte" className="text-sm font-medium transition-colors hover:text-primary">
             Suporte
           </Link>
           <Link to="/communication/lancamentos" className="text-sm font-medium transition-colors hover:text-primary">
             Lançamentos
+          </Link>
+          <Link to="/communication/download" className="text-sm font-medium transition-colors hover:text-primary">
+            Download
           </Link>
           <Link to="/communication/contato" className="text-sm font-medium transition-colors hover:text-primary">
             Contato
