@@ -198,15 +198,15 @@ const CommunicationProdutos = () => {
                       <span className="text-lg font-semibold text-primary">
                         {product.price}
                       </span>
-                      <Button asChild variant="outline" size="sm">
-                        <a
-                          href={`https://wa.me/5511951857253`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-green-600 hover:text-green-700 hover:border-green-600"
-                        >
-                          Saiba Mais
-                        </a>
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => {
+                          window.location.href = `https://wa.me/5511951857253`;
+                        }}
+                        className="text-green-600 hover:text-green-700 hover:border-green-600"
+                      >
+                        Saiba Mais
                       </Button>
                     </div>
                   </CardContent>
