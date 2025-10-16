@@ -8,6 +8,7 @@ import NetworkIndex from "./pages/network/Index";
 import NetworkProdutos from "./pages/network/Produtos";
 import NetworkTreinamento from "./pages/network/Treinamento";
 import NetworkSuport from "./pages/network/Suporte";
+import NetworkLancamentos from "./pages/network/Lancamentos";
 import CommunicationIndex from "./pages/communication/Index";
 import CommunicationProdutos from "./pages/communication/Produtos";
 import CommunicationTreinamento from "./pages/communication/Treinamento";
@@ -31,7 +32,7 @@ const App = () => (
           <Route path="/network/produtos" element={<NetworkProdutos />} />
           <Route path="/network/treinamento" element={<NetworkTreinamento />} />
           <Route path="/network/suporte" element={<NetworkSuport />} />
-          <Route path="/network/lancamentos" element={<Lancamentos />} />
+          <Route path="/network/lancamentos" element={<NetworkLancamentos />} />
           <Route path="/network/contato" element={<Contato />} />
           <Route path="/network/download" element={<Download />} />
           <Route path="/communication" element={<CommunicationIndex />} />
