@@ -7,20 +7,45 @@ const Lobby = () => {
   const [hoveredSide, setHoveredSide] = useState<'network' | 'communication' | null>(null);
 
   return (
-    <div className="relative h-screen w-screen overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="relative h-screen w-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      {/* Grid background futurístico */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f12_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f12_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+      
+      {/* Logos Zyxel no fundo ofuscados */}
+      <div className="absolute inset-0 opacity-5">
+        <img src={zyxelLogo} alt="" className="absolute top-1/4 left-1/4 w-96 h-96 object-contain blur-md transform -rotate-12" />
+        <img src={zyxelLogo} alt="" className="absolute bottom-1/4 right-1/4 w-96 h-96 object-contain blur-md transform rotate-12" />
+      </div>
+      
       {/* Animated background patterns */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-green-500 rounded-full filter blur-[100px] animate-pulse"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full filter blur-[100px] animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-500 rounded-full filter blur-[120px] animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500 rounded-full filter blur-[120px] animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-blue-500 rounded-full filter blur-[120px] animate-pulse" style={{ animationDelay: '2s' }}></div>
+      </div>
+      
+      {/* Linhas futurísticas decorativas */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-emerald-500/20 to-transparent"></div>
+        <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-cyan-500/20 to-transparent"></div>
+        <div className="absolute left-0 top-1/4 w-full h-px bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent"></div>
+        <div className="absolute left-0 bottom-1/4 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"></div>
       </div>
 
       {/* Header com logo centralizado */}
-      <div className="absolute top-0 left-0 right-0 z-50 flex flex-col items-center pt-1">
-        <img src={zyxelLogo} alt="Zyxel Logo" className="h-12 md:h-14 mb-2 drop-shadow-2xl" />
-        <h1 className="text-xl md:text-2xl font-bold text-white drop-shadow-2xl mb-1">
-          Zyxel Brasil
+      <div className="absolute top-0 left-0 right-0 z-50 flex flex-col items-center pt-6">
+        <div className="relative">
+          <div className="absolute inset-0 bg-emerald-500/20 blur-2xl rounded-full"></div>
+          <img src={zyxelLogo} alt="Zyxel Logo" className="relative h-14 md:h-16 mb-3 drop-shadow-2xl" />
+        </div>
+        <h1 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl mb-2 tracking-wider">
+          ZYXEL BRASIL
         </h1>
-        <p className="text-white/70 text-xs md:text-sm drop-shadow-lg">Escolha sua Business Unit</p>
+        <div className="flex items-center gap-2 text-white/70 text-sm md:text-base">
+          <div className="w-8 h-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent"></div>
+          <p className="drop-shadow-lg tracking-wide">Escolha sua Business Unit</p>
+          <div className="w-8 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
+        </div>
       </div>
 
       {/* Container principal com as duas opções */}
@@ -32,11 +57,14 @@ const Lobby = () => {
               to="/network"
               onMouseEnter={() => setHoveredSide('network')}
               onMouseLeave={() => setHoveredSide(null)}
-              className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-600 via-green-600 to-teal-700 p-1 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/50"
+              className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-600 via-green-600 to-teal-700 p-[2px] transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/50"
             >
-              <div className="relative bg-gradient-to-br from-emerald-600/90 via-green-600/90 to-teal-700/90 rounded-3xl p-8 md:p-12 h-full min-h-[300px] flex flex-col items-center justify-center text-center backdrop-blur-sm">
+              <div className="relative bg-gradient-to-br from-emerald-600/95 via-green-600/95 to-teal-700/95 rounded-3xl p-8 md:p-12 h-full min-h-[320px] flex flex-col items-center justify-center text-center backdrop-blur-sm">
+                {/* Grid interno */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:2rem_2rem] rounded-3xl"></div>
+                
                 {/* Ícone animado */}
-                <div className={`mb-6 p-4 rounded-full bg-white/20 backdrop-blur-md transition-all duration-500 ${hoveredSide === 'network' ? 'scale-110 rotate-12' : ''}`}>
+                <div className={`relative mb-6 p-5 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 transition-all duration-500 ${hoveredSide === 'network' ? 'scale-110 rotate-12' : ''}`}>
                   <Network className="h-12 w-12 md:h-14 md:w-14 text-white drop-shadow-lg" />
                 </div>
                 
@@ -65,11 +93,14 @@ const Lobby = () => {
               to="/communication"
               onMouseEnter={() => setHoveredSide('communication')}
               onMouseLeave={() => setHoveredSide(null)}
-              className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600 via-cyan-600 to-sky-700 p-1 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50"
+              className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600 via-cyan-600 to-sky-700 p-[2px] transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50"
             >
-              <div className="relative bg-gradient-to-br from-blue-600/90 via-cyan-600/90 to-sky-700/90 rounded-3xl p-8 md:p-12 h-full min-h-[300px] flex flex-col items-center justify-center text-center backdrop-blur-sm">
+              <div className="relative bg-gradient-to-br from-blue-600/95 via-cyan-600/95 to-sky-700/95 rounded-3xl p-8 md:p-12 h-full min-h-[320px] flex flex-col items-center justify-center text-center backdrop-blur-sm">
+                {/* Grid interno */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:2rem_2rem] rounded-3xl"></div>
+                
                 {/* Ícone animado */}
-                <div className={`mb-6 p-4 rounded-full bg-white/20 backdrop-blur-md transition-all duration-500 ${hoveredSide === 'communication' ? 'scale-110 rotate-12' : ''}`}>
+                <div className={`relative mb-6 p-5 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 transition-all duration-500 ${hoveredSide === 'communication' ? 'scale-110 rotate-12' : ''}`}>
                   <Radio className="h-12 w-12 md:h-14 md:w-14 text-white drop-shadow-lg" />
                 </div>
                 
