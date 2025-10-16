@@ -33,15 +33,15 @@ const Lobby = () => {
       </div>
 
       {/* Header com logo centralizado */}
-      <div className="absolute top-0 left-0 right-0 z-50 flex flex-col items-center pt-6">
+      <div className="absolute top-0 left-0 right-0 z-50 flex flex-col items-center pt-3">
         <div className="relative">
           <div className="absolute inset-0 bg-emerald-500/20 blur-2xl rounded-full"></div>
-          <img src={zyxelLogo} alt="Zyxel Logo" className="relative h-14 md:h-16 mb-3 drop-shadow-2xl" />
+          <img src={zyxelLogo} alt="Zyxel Logo" className="relative h-12 md:h-14 mb-2 drop-shadow-2xl" />
         </div>
-        <h1 className="text-2xl md:text-3xl font-bold text-white drop-shadow-2xl mb-2 tracking-wider">
+        <h1 className="text-xl md:text-2xl font-bold text-white drop-shadow-2xl mb-1.5 tracking-wider">
           ZYXEL BRASIL
         </h1>
-        <div className="flex items-center gap-2 text-white/70 text-sm md:text-base">
+        <div className="flex items-center gap-2 text-white/70 text-xs md:text-sm">
           <div className="w-8 h-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent"></div>
           <p className="drop-shadow-lg tracking-wide">Escolha sua Business Unit</p>
           <div className="w-8 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
