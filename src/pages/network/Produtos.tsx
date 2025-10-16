@@ -250,15 +250,15 @@ const NetworkProdutos = () => {
                       <span className="text-lg font-semibold text-primary">
                         {product.price}
                       </span>
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        onClick={() => {
-                          window.location.href = `https://wa.me/5511951857253`;
-                        }}
-                        className="text-green-600 hover:text-green-700 hover:border-green-600"
-                      >
-                        Saiba Mais
+                      <Button asChild variant="outline" size="sm">
+                        <a
+                          href={`https://wa.me/5511951857253?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20${encodeURIComponent(product.name)}%20da%20Zyxel%20Network.`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-green-600 hover:text-green-700 hover:border-green-600"
+                        >
+                          Saiba Mais
+                        </a>
                       </Button>
                     </div>
                   </CardContent>
