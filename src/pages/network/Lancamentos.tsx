@@ -175,7 +175,7 @@ const NetworkLancamentos = () => {
           <div className="mb-16">
             <div className="flex items-center gap-3 mb-8">
               <Zap className="h-8 w-8 text-primary" />
-              <h2 className="text-3xl font-bold">🧱 Switches – Novos Lançamentos</h2>
+              <h2 className="text-3xl font-bold">Switches – Novos Lançamentos</h2>
             </div>
             <div className="space-y-6 max-w-5xl mx-auto">
               {launches
