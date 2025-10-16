@@ -57,9 +57,17 @@ const Lobby = () => {
               to="/network"
               onMouseEnter={() => setHoveredSide('network')}
               onMouseLeave={() => setHoveredSide(null)}
-              className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-600 via-green-600 to-teal-700 p-[2px] transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/50"
+              className="group relative overflow-hidden rounded-3xl p-[2px] transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+              style={{
+                background: 'linear-gradient(135deg, hsl(125 75% 45%), hsl(160 70% 50%))',
+                boxShadow: hoveredSide === 'network' ? '0 20px 50px hsl(125 75% 45% / 0.5)' : 'none'
+              }}
             >
-              <div className="relative bg-gradient-to-br from-emerald-600/95 via-green-600/95 to-teal-700/95 rounded-3xl p-8 md:p-12 h-full min-h-[320px] flex flex-col items-center justify-center text-center backdrop-blur-sm">
+              <div className="relative rounded-3xl p-8 md:p-12 h-full min-h-[320px] flex flex-col items-center justify-center text-center backdrop-blur-sm"
+                style={{
+                  background: 'linear-gradient(135deg, hsl(125 75% 45% / 0.95), hsl(160 70% 50% / 0.95))'
+                }}
+              >
                 {/* Grid interno */}
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:2rem_2rem] rounded-3xl"></div>
                 
@@ -93,9 +101,17 @@ const Lobby = () => {
               to="/communication"
               onMouseEnter={() => setHoveredSide('communication')}
               onMouseLeave={() => setHoveredSide(null)}
-              className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600 via-cyan-600 to-sky-700 p-[2px] transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50"
+              className="group relative overflow-hidden rounded-3xl p-[2px] transition-all duration-500 hover:scale-105 hover:shadow-2xl"
+              style={{
+                background: 'linear-gradient(135deg, hsl(205 75% 45%), hsl(195 70% 50%))',
+                boxShadow: hoveredSide === 'communication' ? '0 20px 50px hsl(205 75% 45% / 0.5)' : 'none'
+              }}
             >
-              <div className="relative bg-gradient-to-br from-blue-600/95 via-cyan-600/95 to-sky-700/95 rounded-3xl p-8 md:p-12 h-full min-h-[320px] flex flex-col items-center justify-center text-center backdrop-blur-sm">
+              <div className="relative rounded-3xl p-8 md:p-12 h-full min-h-[320px] flex flex-col items-center justify-center text-center backdrop-blur-sm"
+                style={{
+                  background: 'linear-gradient(135deg, hsl(205 75% 45% / 0.95), hsl(195 70% 50% / 0.95))'
+                }}
+              >
                 {/* Grid interno */}
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:2rem_2rem] rounded-3xl"></div>
                 
