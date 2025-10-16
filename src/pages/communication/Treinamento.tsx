@@ -2,11 +2,19 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Download, Search, GraduationCap } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HeaderCommunication } from "@/components/HeaderCommunication";
 
 const CommunicationTreinamento = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  
+  useEffect(() => {
+    document.documentElement.classList.add("communication-theme");
+    document.documentElement.classList.remove("network-theme");
+    return () => {
+      document.documentElement.classList.remove("communication-theme");
+    };
+  }, []);
 
   const trainings = [
     {

@@ -6,9 +6,18 @@ import { Textarea } from "@/components/ui/textarea";
 import { Headphones, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { HeaderCommunication } from "@/components/HeaderCommunication";
+import { useEffect } from "react";
 
 const CommunicationSuport = () => {
   const { toast } = useToast();
+  
+  useEffect(() => {
+    document.documentElement.classList.add("communication-theme");
+    document.documentElement.classList.remove("network-theme");
+    return () => {
+      document.documentElement.classList.remove("communication-theme");
+    };
+  }, []);
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({ title: "Solicitação enviada!", description: "Nossa equipe Communication entrará em contato em breve." });
