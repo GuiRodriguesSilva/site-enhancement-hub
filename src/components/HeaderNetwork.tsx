@@ -79,8 +79,8 @@ export const HeaderNetwork = () => {
           >
             {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
-          <Link to="/">
-            <Button variant="ghost" size="icon" title="Voltar ao Lobby">
+          <Link to="/network">
+            <Button variant="ghost" size="icon" title="Voltar ao Início">
               <Home className="h-5 w-5" />
             </Button>
           </Link>
