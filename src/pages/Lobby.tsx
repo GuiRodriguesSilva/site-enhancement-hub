@@ -32,7 +32,7 @@ const Lobby = () => {
   return (
     <div className="relative h-screen w-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Carrossel de imagens de fundo */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-40">
         <Carousel
           setApi={setApi}
           opts={{
@@ -58,7 +58,7 @@ const Lobby = () => {
       </div>
       
       {/* Overlay escuro para melhorar contraste */}
-      <div className="absolute inset-0 bg-slate-950/60"></div>
+      <div className="absolute inset-0 bg-slate-950/40"></div>
       
       {/* Grid background futurístico */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f12_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f12_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
