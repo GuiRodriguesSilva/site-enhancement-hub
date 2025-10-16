@@ -1,21 +1,60 @@
 import { Link } from "react-router-dom";
 import { Network, Radio } from "lucide-react";
 import zyxelLogo from "@/assets/zyxel-logo.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import carousel1 from "@/assets/carousel/zyxel-1.jpg";
+import carousel2 from "@/assets/carousel/zyxel-2.jpg";
+import carousel3 from "@/assets/carousel/zyxel-3.jpg";
+import carousel4 from "@/assets/carousel/zyxel-4.jpg";
 
 const Lobby = () => {
   const [hoveredSide, setHoveredSide] = useState<'network' | 'communication' | null>(null);
+  
+  const carouselImages = [carousel1, carousel2, carousel3, carousel4];
 
   return (
     <div className="relative h-screen w-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      {/* Carrossel de imagens de fundo */}
+      <div className="absolute inset-0 opacity-20">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 4000,
+            }),
+          ]}
+          className="w-full h-full"
+        >
+          <CarouselContent className="h-screen">
+            {carouselImages.map((image, index) => (
+              <CarouselItem key={index} className="h-full">
+                <div className="h-full w-full">
+                  <img
+                    src={image}
+                    alt={`Zyxel produto ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </div>
+      
+      {/* Overlay escuro para melhorar contraste */}
+      <div className="absolute inset-0 bg-slate-950/60"></div>
+      
       {/* Grid background futurístico */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f12_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f12_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-      
-      {/* Logos Zyxel no fundo ofuscados */}
-      <div className="absolute inset-0 opacity-5">
-        <img src={zyxelLogo} alt="" className="absolute top-1/4 left-1/4 w-96 h-96 object-contain blur-md transform -rotate-12" />
-        <img src={zyxelLogo} alt="" className="absolute bottom-1/4 right-1/4 w-96 h-96 object-contain blur-md transform rotate-12" />
-      </div>
       
       {/* Animated background patterns */}
       <div className="absolute inset-0 opacity-10">
