@@ -34,6 +34,7 @@ const App = () => (
           <Route path="/network/suporte" element={<NetworkSuport />} />
           <Route path="/network/lancamentos" element={<NetworkLancamentos />} />
           <Route path="/contato" element={<Contato />} />
+          <Route path="/download" element={<Download />} />
           <Route path="/network/contato" element={<Contato />} />
           <Route path="/network/download" element={<Download />} />
           <Route path="/communication" element={<CommunicationIndex />} />
