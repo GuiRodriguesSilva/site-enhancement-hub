@@ -1,128 +1,180 @@
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { HeaderNetwork } from "@/components/HeaderNetwork";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin } from "lucide-react";
 import { useEffect } from "react";
 
 const NetworkContato = () => {
   useEffect(() => {
     document.documentElement.classList.add("network-theme");
     document.documentElement.classList.remove("communication-theme");
-    
     return () => {
       document.documentElement.classList.remove("network-theme");
     };
   }, []);
 
+  const contacts = [
+    {
+      title: "Gerente Comercial Nacional de Vendas",
+      name: "Diogo Nakazawa",
+      phone: ".",
+      email: ".",
+      department: "Departamento Comercial",
+    },
+    {
+      title: "Gerente de Contas Estratégicas",
+      name: "Fernada Hikawa",
+      phone: ".",
+      email: ".",
+      department: "Departamento Comercial",
+    },
+    {
+      title: "Analista de Pré-Vendas",
+      name: "Felippe Sic",
+      phone: ".",
+      email: ".",
+      department: "Departamento Comercial",
+    },
+    {
+      title: "Cordenador Comercial",
+      name: "José Humberto",
+      phone: ".",
+      email: ".",
+      department: "Departamento Comercial",
+    },
+    {
+      title: "Analista de Suporte Técnico",
+      name: "Alexandre Inacio",
+      phone: ".",
+      email: ".",
+      department: "Departamento Técnico",
+    },
+    {
+      title: "Suporte Técnico",
+      name: "Guilherme Rodrigues da Silva",
+      phone: ".",
+      email: ".",
+      department: "Departamento Técnico",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background network-theme">
       <HeaderNetwork />
-      
-      <main className="container mx-auto px-4 py-12">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4">Contato Network</h1>
-            <p className="text-xl text-muted-foreground">
-              Entre em contato com nossa equipe Network
+
+      {/* Hero Section */}
+      <section className="relative overflow-hidden py-20">
+        <div className="absolute inset-0 bg-tech-gradient opacity-5"></div>
+        <div className="container relative mx-auto px-4">
+          <div className="mx-auto max-w-3xl text-center animate-fade-in">
+            <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+              <Phone className="h-8 w-8 text-primary" />
+            </div>
+            <h1 className="mb-6 text-4xl font-bold md:text-5xl">
+              Entre em{" "}
+              <span className="bg-tech-gradient bg-clip-text text-transparent">
+                Contato
+              </span>
+            </h1>
+            <p className="text-lg text-muted-foreground">
+              Nossa equipe está pronta para atender você
             </p>
           </div>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-2 gap-8">
+      {/* Contact Cards */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+            {contacts.map((contact, index) => (
+              <Card
+                key={index}
+                className="hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
+              >
+                <CardHeader>
+                  <CardTitle className="text-xl">{contact.title}</CardTitle>
+                  <CardDescription>{contact.department}</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3 text-sm">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+                        <Phone className="h-4 w-4 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-medium">{contact.name}</p>
+                        <a
+                          href={`tel:${contact.phone.replace(/\D/g, "")}`}
+                          className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                          {contact.phone}
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3 text-sm">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+                        <Mail className="h-4 w-4 text-primary" />
+                      </div>
+                      <a
+                        href={`mailto:${contact.email}`}
+                        className="text-muted-foreground hover:text-primary transition-colors break-all"
+                      >
+                        {contact.email}
+                      </a>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Additional Info */}
+          <div className="mt-12 grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
             <Card>
               <CardHeader>
-                <CardTitle>Envie uma Mensagem</CardTitle>
-                <CardDescription>
-                  Preencha o formulário e retornaremos em breve
-                </CardDescription>
+                <CardTitle className="flex items-center gap-2">
+                  <MapPin className="h-5 w-5 text-primary" />
+                  Endereço
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <form className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Nome</Label>
-                    <Input id="name" placeholder="Seu nome completo" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="seu@email.com" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Telefone</Label>
-                    <Input id="phone" placeholder="(00) 00000-0000" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Mensagem</Label>
-                    <Textarea 
-                      id="message" 
-                      placeholder="Como podemos ajudar?" 
-                      className="min-h-[120px]"
-                    />
-                  </div>
-                  <Button className="w-full">Enviar Mensagem</Button>
-                </form>
+                <p className="text-sm text-muted-foreground">
+                  Rua. Urussuí, 300 - Conjunto 12/13
+                  <br />
+                  Itaim Bibi, São Paulo - SP
+                  <br />
+                  CEP: 04542-050
+                </p>
               </CardContent>
             </Card>
 
-            <div className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Mail className="h-5 w-5" />
-                    Email
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">network@zyxel.com.br</p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Phone className="h-5 w-5" />
-                    Telefone
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">+55 (11) 3000-0000</p>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Segunda a Sexta, 9h às 18h
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <MapPin className="h-5 w-5" />
-                    Endereço
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Av. Paulista, 1000<br />
-                    São Paulo, SP<br />
-                    CEP 01310-100
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Clock className="h-5 w-5 text-primary" />
+                  Horário de Atendimento
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Segunda a Sexta: 8h às 18h
+                  <br />
+                  Sábado: Fechado
+                  <br />
+                  Domingo e Feriados: Fechado
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
-      </main>
-
-      <footer className="border-t mt-20">
-        <div className="container mx-auto px-4 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2">
-              <img src="/zyxel-logo.png" alt="Zyxel Logo" className="h-8" />
-              <span className="text-sm text-muted-foreground">© 2024 Zyxel Brasil. Todos os direitos reservados.</span>
-            </div>
-          </div>
-        </div>
-      </footer>
+      </section>
     </div>
   );
 };
