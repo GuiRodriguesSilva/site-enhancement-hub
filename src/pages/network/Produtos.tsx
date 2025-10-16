@@ -252,7 +252,7 @@ const NetworkProdutos = () => {
                       </span>
                       <Button asChild variant="outline" size="sm">
                         <a
-                          href={`https://wa.me/5511951857253?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20${encodeURIComponent(product.name)}%20da%20Zyxel%20Network.`}
+                          href={`https://wa.me/5511951857253?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20${encodeURIComponent(product.name)}%20da%20Zyxel.`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-green-600 hover:text-green-700 hover:border-green-600"
